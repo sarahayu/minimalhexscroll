@@ -12,13 +12,15 @@ import useHexTooltip from 'src/scrollyline/hooks/useHexTooltip';
 import useScroller from 'src/scrollyline/hooks/useScroller';
 
 import { temporalDataHex as data } from 'src/utils/data';
-import { INITIAL_VIEW_STATE, LIGHTING } from 'src/utils/settings';
+import { LIGHTING } from 'src/utils/settings';
+import useCamera from './hooks/useCamera';
 
 export default function Scrollyline() {
   const [slide, setSlide] = useState(0);
 
   const counters = useCounters({ slide });
   const { getTooltip } = useHexTooltip({ slide, ...counters });
+  const { curViewState, transitioning } = useCamera({ slide });
   const { scrollPercent } = useScroller({ setSlide });
 
   const layers = [
@@ -35,9 +37,12 @@ export default function Scrollyline() {
       <DeckGL
         layers={layers}
         effects={[LIGHTING]}
-        initialViewState={INITIAL_VIEW_STATE}
+        initialViewState={curViewState}
         controller={{ scrollZoom: false }}
         getTooltip={getTooltip}
+        onViewStateChange={({ viewState }) => {
+          console.log(viewState);
+        }}
       >
         <Map
           reuseMaps
@@ -46,7 +51,7 @@ export default function Scrollyline() {
           preventStyleDiffing={true}
         />
       </DeckGL>
-      <MainGUI {...{ slide, ...counters }} />
+      <MainGUI {...{ slide, ...counters, transitioning }} />
       <Scroller scrollPercent={scrollPercent} />
     </>
   );

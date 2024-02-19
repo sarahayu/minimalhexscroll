@@ -52,3 +52,63 @@ export const LIGHTING = new LightingEffect({
 });
 
 export const MAX_SLIDE = 7;
+
+export const COWS_VIEW_STATE = {
+  longitude: -120.799348991653,
+  latitude: 37.07909824584108,
+  zoom: 9.589607161282105,
+  minZoom: 7,
+  maxZoom: 11,
+  pitch: 50.85,
+  bearing: 32.58,
+  transitionDuration: 3000,
+  transitionInterpolator: new FlyToInterpolator(),
+};
+
+export const COWS_OUT_VIEW_STATE = {
+  longitude: -121.134704643101,
+  latitude: 37.71392572292552,
+  zoom: 7.714668594935653,
+  minZoom: 7,
+  maxZoom: 11,
+  pitch: 50.85,
+  bearing: 32.58,
+  transitionDuration: 3000,
+  transitionInterpolator: new FlyToInterpolator(),
+};
+
+export const PROJ_OUT_VIEW_STATE = {
+  longitude: -121.724611542995,
+  latitude: 38.20436329728941,
+  zoom: 8.054386171593723,
+  minZoom: 7,
+  maxZoom: 11,
+  pitch: 50.85,
+  bearing: 32.58,
+  transitionDuration: 3000,
+  transitionInterpolator: new FlyToInterpolator(),
+};
+
+export const SETT_VIEW_STATE = {
+  longitude: -121.816103974157,
+  latitude: 38.98693235425995,
+  zoom: 9.654348182289308,
+  minZoom: 7,
+  maxZoom: 11,
+  pitch: 50.85,
+  bearing: 32.58,
+  transitionDuration: 3000,
+  transitionInterpolator: new FlyToInterpolator(),
+};
+
+export const PROJ_VIEW_STATE = {
+  longitude: -121.80183018585,
+  latitude: 38.26807071392864,
+  zoom: 9.572807132250027,
+  minZoom: 7,
+  maxZoom: 11,
+  pitch: 50.85,
+  bearing: 32.58,
+  transitionDuration: 3000,
+  transitionInterpolator: new FlyToInterpolator(),
+};

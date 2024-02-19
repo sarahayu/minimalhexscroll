@@ -3,10 +3,10 @@ import Card from 'src/scrollyline/Card';
 import Clock from 'src/Clock';
 import { inRange } from 'src/utils/settings';
 
-export default function MainGUI({ slide, counter }) {
+export default function MainGUI({ slide, counter, transitioning }) {
   return (
     <>
-      <Card slide={slide} transitioning={false} />
+      <Card slide={slide} transitioning={transitioning} />
       {inRange(slide, 1, 6) && (
         <Clock
           counter={inRange(slide, 3, 6) ? (slide <= 4 ? 1026 : 1197) : counter}
